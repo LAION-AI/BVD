@@ -1,0 +1,6 @@
+rich
+torch
+vllm
+transformers
+qwen_vl_utils
+torchvision

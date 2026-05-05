@@ -1,0 +1,10 @@
+data_path: "/leonardo_work/EUHPC_E03_068/shared/datasets/datacomp/datacomp_1B/flat/"
+output_dir: "/leonardo_work/EUHPC_E03_068/marianna/laion_bvd_recap/datacomp_1b/filtered"
+batch_size: 32
+num_workers: 1
+meta_key: "json"
+img_key: "jpg"
+filter_functions: []
+  # - type: mono
+  #   threshold: 0.5
+  #   is_monochromatic: false

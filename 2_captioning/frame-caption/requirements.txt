@@ -1,0 +1,14 @@
+# data
+webdataset
+pyarrow
+pandas
+# inference
+vllm
+transformers
+torch
+# utils
+ray
+# viz
+matplotlib
+# test
+pytest

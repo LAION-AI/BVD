@@ -1,0 +1,41 @@
+Bootstrap: docker
+From: python:3.12-slim
+
+%post
+    # Install system dependencies for OpenCV (headless) and ffmpeg
+    apt-get update && apt-get install -y --no-install-recommends \
+        git \
+        ffmpeg \
+        libglib2.0-0 \
+        && rm -rf /var/lib/apt/lists/*
+
+    # Install uv for fast Python package management
+    pip install uv
+
+    # Set working directory
+    mkdir -p /app
+    mkdir -p /venv
+
+%files
+    pyproject.toml /app/pyproject.toml
+    detect_scenes_and_split.py /app/detect_scenes_and_split.py
+
+%environment
+    UV_PYTHON=/venv/bin/python
+    UV_PROJECT_ENVIRONMENT=/venv
+
+%post
+    # Install Python dependencies
+    cd /app
+    UV_PROJECT_ENVIRONMENT=/venv uv sync --no-dev
+    git clone https://github.com/Breakthrough/PySceneDetect.git
+    cd PySceneDetect
+    uv pip install -e . --python /venv/bin/python
+
+%runscript
+    cd /app
+    exec /venv/bin/python "$@"
+
+%labels
+    Version 1.0
+

@@ -1,0 +1,10 @@
+data_path: "/p/data1/mmlaion/laion_bvd/extracted_images_test/000-part-00001-c4778e33-5c8f-4681-aa83-d8837fc6294a-c000.snappy.parquet/"
+output_dir: "/p/data1/mmlaion/laion_bvd_recap/filtered_test"
+batch_size: 32
+num_workers: 4
+meta_key: "info.json"
+img_key: "png"
+filter_functions: 
+  - type: mono
+    threshold: 0.8
+    is_monochromatic: False
