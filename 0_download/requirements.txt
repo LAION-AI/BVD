@@ -1,0 +1,6 @@
+celery
+pandas
+pyarrow
+rich
+redis
+yt-dlp
