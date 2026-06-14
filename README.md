@@ -1,6 +1,6 @@
 # LAION Big Video Dataset
 
-**A 10-Million-Hour Open Web Video Corpus for Video, Audio, and Image-Text Pre-training**
+**A 10-Million-Hour Open Video Dataset for Multimodal Pre-training**
 
 Project Page (coming soon) · Paper (coming soon) · Download (coming soon) · [GitHub](https://github.com/laion-ai/bvd)
 
